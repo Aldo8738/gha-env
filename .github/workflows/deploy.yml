@@ -1,5 +1,6 @@
 name: Deployment
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -39,5 +40,5 @@ jobs:
     steps:
       - name: Output information
         run: |        
-          echo "${{ env.MONGODB_USERNAME }}"
+          echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
           echo "MONGO_DB_NAME: ${{ env.MONGODB_DB_NAME }}"
